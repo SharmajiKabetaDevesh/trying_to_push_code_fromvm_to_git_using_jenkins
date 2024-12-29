@@ -4,10 +4,10 @@ stages{
 stage("pushing"){
   withCredentials([usernamePassword(credentialsId: 'github' ,usernameVariable: 'USERNAME' ,passwordVariable: 'PASSWORD')]){
 
-  
+  steps{
   echo "${USERNAME}"
   echo "${PASSWORD}"
-
+}
 }
 }
 }
