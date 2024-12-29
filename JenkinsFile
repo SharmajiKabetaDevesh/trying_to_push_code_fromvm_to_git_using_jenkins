@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-  
+   
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "Jenkins-Learnings"
+            GIT_REPO_NAME = "trying_to_push_code_fromvm_to_git_using_jenkins"
             GIT_USER_NAME = "SharmajiKabetaDevesh"
         }
         steps {
