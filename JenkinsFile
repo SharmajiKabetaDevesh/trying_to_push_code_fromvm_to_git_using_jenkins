@@ -6,8 +6,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     script {
-                        echo "Username: ${env.USERNAME}"
-                        echo "Password: ${env.PASSWORD}"
+                        echo "Username: ${USERNAME}"
+                        echo "Password: ${PASSWORD}"
                     }
                 }
             }
