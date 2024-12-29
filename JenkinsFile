@@ -5,9 +5,8 @@ stage("pushing"){
   withCredentials([usernamePassword(credentialsId: 'github' ,usernameVariable: 'USERNAME' ,passwordVariable: 'PASSWORD')]){
 sh ""
 
-  git config user.email deveshrs2016@gmail.com
-  git config user.name ${USERNAME}
-   git config user.password ${PASSWORD}
+  echo ${USERNAME}
+  echo ${PASSWORD}
 ""
 }
 }
