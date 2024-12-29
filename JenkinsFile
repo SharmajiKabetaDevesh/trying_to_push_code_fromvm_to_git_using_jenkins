@@ -1,16 +1,16 @@
-pipeline{
-agent any 
-stages{
-stage("pushing"){
-  withCredentials([usernamePassword(credentialsId: 'github' ,usernameVariable: 'USERNAME' ,passwordVariable: 'PASSWORD')]){
+pipeline {
+    agent any 
 
-  steps{
-  echo "${USERNAME}"
-  echo "${PASSWORD}"
+    stages {
+        stage("pushing") {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    script {
+                        echo "Username: ${env.USERNAME}"
+                        echo "Password: ${env.PASSWORD}"
+                    }
+                }
+            }
+        }
+    }
 }
-}
-}
-}
-
-}
-
