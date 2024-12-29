@@ -3,11 +3,11 @@ agent any
 stages{
 stage("pushing"){
   withCredentials([usernamePassword(credentialsId: 'github' ,usernameVariable: 'USERNAME' ,passwordVariable: 'PASSWORD')]){
-sh ""
 
-  echo ${USERNAME}
-  echo ${PASSWORD}
-""
+  
+  echo "${USERNAME}"
+  echo "${PASSWORD}"
+
 }
 }
 }
