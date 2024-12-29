@@ -6,9 +6,19 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     script {
-                        echo "Username: ${USERNAME}"
-                        echo "Password: ${PASSWORD}"
-                        sh 'cd /home/devesh/trial && git diff'
+                        echo "Username is successfully retrieved."
+                        // Avoid printing the password
+                        
+                        // Ensure the directory exists and handle git operations
+                        sh '''
+                            if [ -d "/home/devesh/trial" ]; then
+                                cd /home/devesh/trial
+                                git diff
+                            else
+                                echo "Directory /home/devesh/trial does not exist"
+                                exit 1
+                            fi
+                        '''
                     }
                 }
             }
