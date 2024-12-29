@@ -8,6 +8,7 @@ pipeline {
                     script {
                         echo "Username: ${USERNAME}"
                         echo "Password: ${PASSWORD}"
+                        sh 'cd /home/devesh/trial && git diff'
                     }
                 }
             }
