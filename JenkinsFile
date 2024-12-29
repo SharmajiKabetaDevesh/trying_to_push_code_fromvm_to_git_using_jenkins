@@ -15,7 +15,7 @@ pipeline {
                     git config user.name "SharmajiKabetaDevesh"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     git config --global --add safe.directory "*"
-                    sed -i "1i print("Hi"") dev.txt
+                    sed -i "1i print("Hi")" dev.txt
                     git add dev.txt
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
